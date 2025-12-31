@@ -169,15 +169,8 @@ impl NetworkManager {
 
         let mut headers = HeaderMap::new();
 
-        // 设置 User-Agent
-        if let Some(ua) = user_agent {
-            headers.insert(USER_AGENT, HeaderValue::from_str(ua.as_str())?);
-        } else {
-            headers.insert(
-                USER_AGENT,
-                HeaderValue::from_str(&format!("clash-verge/v{}", env!("CARGO_PKG_VERSION")))?,
-            );
-        }
+        // 强制把所有请求的 UA 都改成特斯拉
+        headers.insert(USER_AGENT, HeaderValue::from_str("Mozilla/5.0 (X11; GNU/Linux) AppleWebKit/537.36 (KHTML, like Gecko) Chromium/132.0.6834.160 Chrome/132.0.6834.160 Safari/537.36 Tesla/2025.32.1")?);
 
         let client = self.build_client(proxy_url, headers, accept_invalid_certs, timeout_secs)?;
 
