@@ -116,7 +116,7 @@ pub async fn test_delay(url: String) -> anyhow::Result<u32> {
         ProxyType::None
     };
 
-    let user_agent = Some("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0".into());
+    let user_agent = Some("Mozilla/5.0 (X11; GNU/Linux) AppleWebKit/537.36 (KHTML, like Gecko) Chromium/132.0.6834.160 Chrome/132.0.6834.160 Safari/537.36 Tesla/2025.32.1".into());
 
     let start = Instant::now();
 
